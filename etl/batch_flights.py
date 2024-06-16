@@ -13,7 +13,7 @@ def get_flights(key):
     return flights["data"]
 
 
-def noramlize_flights(flights_list: list):
+def normalize_flights(flights_list: list):
     normalized_flights = []
     for flight in flights_list:
         individual_flight = {
@@ -37,14 +37,14 @@ def noramlize_flights(flights_list: list):
 
         normalized_flights.append(individual_flight)
 
-        return normalized_flights
+    return normalized_flights
 
 
 def main():
-    arrivals = noramlize_flights(get_flights(get_url(key="ARRIVALS_URL")))
-    print(arrivals[0])
+    arrivals = normalize_flights(get_flights(get_url(key="ARRIVALS_URL")))
+    print(arrivals[2])
 
-    departures = noramlize_flights(get_flights(get_url(key="DEPARTURES_URL")))
+    departures = normalize_flights(get_flights(get_url(key="DEPARTURES_URL")))
     print(departures[0])
 
 
